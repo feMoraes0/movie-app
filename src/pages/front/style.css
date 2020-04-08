@@ -8,6 +8,11 @@ div.front-container {
 }
 
 /* MENU SECTION */
+div.menu {
+  position: fixed;
+  width: 20%;
+  min-height: 100vh;
+}
 div.menu div.user {
   margin: 45px auto;
   display: flex;
@@ -42,8 +47,8 @@ div.menu div.list li:hover {
 /* BODY SECTION */
 div.front-container div.body {
   padding: 50px 40px;
-  height: 100vh;
-  overflow-y: scroll;
+  /* height: 100vh; */
+  /* overflow-y: scroll; */
 }
 div.body div.body-header {
   display: flex;
@@ -91,11 +96,20 @@ div.body div.body-movies {
   grid-template-columns: repeat(4, calc(25% - 30px));
   grid-gap: 30px;
 }
+@keyframes show-card {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 div.body div.body-movies div.movie-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: show-card 1s;
 }
 
 div.body div.body-movies div.movie-card img {
@@ -108,3 +122,4 @@ div.body div.body-movies div.movie-card h5 {
   font-size: 16px;
   text-align: center;
 }
+
