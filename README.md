@@ -1,5 +1,6 @@
 <h1 align="center">Movie App</h1>
-> You can find all the project specifications <a href="https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/Movie-App.md">here</a>.
+
+>You can find all the project specifications <a href="https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/Movie-App.md">here</a>.
 
 **Tier:** 3-Advanced
 
