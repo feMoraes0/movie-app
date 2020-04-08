@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './style.css';
+import Front from './pages/front';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Front />
   </React.StrictMode>,
   document.getElementById('root')
 );
