@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import StarRatings from 'react-star-ratings';
 import Scaffold from '../../components/scaffold';
 import Menu from '../../components/menu';
 
 function Detail() {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState();
   const { movie_id } = useParams();
 
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=27e2920c99b7658f5d89f82bc529233f&language=en-US`).then((response) => {
       setMovie(response.data);
+      console.log(movie);
     });
-  }, []);
+  }, [movie_id]);
 
   return (
     <Scaffold>
@@ -26,7 +28,17 @@ function Detail() {
             </div>
             <div className='movie-infos'>
               <h1 className='title'>{movie.title}</h1>
-              <h5 className='subtitle'>{`${movie.vote_count} People Ratings`}</h5>
+              <h5 className='subtitle'>
+                <StarRatings
+                  rating={movie.vote_average / 2}
+                  starDimension='18px'
+                  starRatedColor='blue'
+                  numberOfStars={5}
+                  name='rating'
+                />
+                &nbsp;
+                {` ${movie.vote_count} People Ratings`}
+              </h5>
               <h4>
                 {
                   (movie.genres !== undefined)
