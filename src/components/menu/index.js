@@ -7,7 +7,7 @@ import { FiSearch } from 'react-icons/fi';
 function Menu() {
   return (
     <div className='menu'>
-      <img src='./assets/logo-movie-app.png' alt='logo' />
+      <img src='../assets/logo-movie-app.png' alt='logo' />
       <div className='search-bar'>
         <input type='text' placeholder='Search...' />
         <button type='button'>

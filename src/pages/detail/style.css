@@ -1,0 +1,41 @@
+
+div.about-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 90vw;
+  margin: auto 5vw;
+  padding-top: 130px;
+}
+
+div.about-body div:first-child {
+  display: flex;
+  justify-content: center;
+}
+div.about-body div img {
+  max-width: 400px;
+}
+
+div.about-body div.movie-infos {
+  padding: 0px 20px;
+}
+div.about-body div.movie-infos h1.title {
+  font-weight: 700;
+  font-size: 40px;
+  color: white;
+}
+div.about-body div.movie-infos h5.subtitle {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: silver;
+}
+div.about-body div.movie-infos h4.overview {
+  font-weight: 400;
+  color: grey;
+  margin: 20px auto;
+  text-align: justify;
+}
+div.about-body div.movie-infos h4 {
+  font-size: 16px;
+  line-height: 1.5;
+  color: silver;
+}

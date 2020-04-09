@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import { FiSearch } from 'react-icons/fi';
 import axios from 'axios';
 import LazyLoad from 'react-lazyload';
+import { Link } from 'react-router-dom';
 import Menu from '../../components/menu';
 import Scaffold from '../../components/scaffold';
 
@@ -44,10 +44,13 @@ function Front() {
           {
           movies.map((movie) => (
             <LazyLoad key={movie.id} offset={150} once>
-              <div className='movie-card'>
-                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='' />
-                <h5>{movie.title}</h5>
-              </div>
+              <Link to={`/details/${movie.id}`}>
+                <div className='movie-card'>
+                  <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='' />
+                  <h5>{movie.title}</h5>
+                  <h5>{movie.id}</h5>
+                </div>
+              </Link>
             </LazyLoad>
           ))
         }

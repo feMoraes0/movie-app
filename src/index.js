@@ -12,7 +12,7 @@ ReactDOM.render(
         <Route path='/' exact>
           <Front />
         </Route>
-        <Route path='/details'>
+        <Route path='/details/:movie_id'>
           <Detail />
         </Route>
       </Switch>
