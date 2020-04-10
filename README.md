@@ -18,6 +18,7 @@ Find your next movie or create your watchlist with this App. It include reviews,
 
 ## Bonus features
 
+-   [x] User can search movies by name
 -   [ ] User can create an account
 -   [ ] User can create their own watch list
 -   [ ] User can review movies
