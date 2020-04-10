@@ -8,6 +8,7 @@ import Menu from '../../components/menu';
 import Breadcrumb from '../../components/breadcrumb';
 
 function Detail() {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const [movie, setMovie] = useState();
   const { movie_id } = useParams();
 
@@ -73,7 +74,7 @@ function Detail() {
                       const hasNext = (index < movie.spoken_languages.length - 1);
                       return (
                         <span key={element.name}>
-                          {element.name + ((hasNext) ? ' - ' : '')}
+                          {element.name + ((hasNext) ? ' / ' : '')}
                         </span>
                       );
                     })
@@ -85,7 +86,15 @@ function Detail() {
                   <li>
                     <span>Release:</span>
                     {' '}
-                    {movie.release_date}
+                    { `${new Date(movie.release_date).getDate()
+
+                    } ${
+
+                      months[new Date(movie.release_date).getMonth()]
+
+                    } ${
+
+                      new Date(movie.release_date).getFullYear()}`}
                   </li>
                   <li>
                     <span>Duration:</span>
