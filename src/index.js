@@ -4,6 +4,7 @@ import './style.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Front from './pages/front';
 import Detail from './pages/detail';
+import Search from './pages/search';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route path='/details/:movie_id'>
           <Detail />
         </Route>
+        <Route path='/search' component={Search} />
       </Switch>
     </Router>
   </React.StrictMode>,
