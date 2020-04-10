@@ -15,7 +15,6 @@ function Menu() {
           &nbsp;
         </button>
       </div>
-      <h6 className='login-label'>Login or Register</h6>
     </div>
   );
 }

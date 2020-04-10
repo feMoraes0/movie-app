@@ -5,6 +5,7 @@ import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 import Menu from '../../components/menu';
 import Scaffold from '../../components/scaffold';
+import Breadcrumb from '../../components/breadcrumb';
 
 function Front() {
   const [movies, setMovies] = useState([]);
@@ -37,9 +38,14 @@ function Front() {
       <div />
       {/* BODY */}
       <div className='body'>
-        <div className='body-header'>
-          <p className='header-title'>Lastest Movies</p>
-        </div>
+        <Breadcrumb
+          paths={[
+            {
+              name: 'Movies',
+              url: '/',
+            },
+          ]}
+        />
         <div className='body-movies'>
           {
           movies.map((movie) => (
@@ -48,7 +54,6 @@ function Front() {
                 <div className='movie-card'>
                   <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='' />
                   <h5>{movie.title}</h5>
-                  <h5>{movie.id}</h5>
                 </div>
               </Link>
             </LazyLoad>
