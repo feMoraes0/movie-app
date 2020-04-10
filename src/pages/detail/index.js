@@ -13,7 +13,6 @@ function Detail() {
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=27e2920c99b7658f5d89f82bc529233f&language=en-US`).then((response) => {
       setMovie(response.data);
-      console.log(movie);
     });
   }, [movie_id]);
 
@@ -24,7 +23,7 @@ function Detail() {
         (movie !== undefined) ? (
           <div className='about-body'>
             <div>
-              <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='movie' />
+              <img className='movie_img' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='movie' />
             </div>
             <div className='movie-infos'>
               <h1 className='title'>{movie.title}</h1>
@@ -68,6 +67,34 @@ function Detail() {
                 }
               </h4>
               <h4 className='overview'>{movie.overview}</h4>
+              <ul>
+                <li>
+                  <span>Release:</span>
+                  {' '}
+                  {movie.release_date}
+                </li>
+                <li>
+                  <span>Duration:</span>
+                  {' '}
+                  {`${Math.round(movie.runtime / 60)}h ${movie.runtime % 60}min`}
+                </li>
+                <li>
+                  <span>Popularity:</span>
+                  {' '}
+                  {movie.popularity}
+                </li>
+              </ul>
+              <div className='companies'>
+                {
+                  movie.production_companies.map((element) => (
+                    <div key={element.id}>
+                      { (element.logo_path !== null)
+                        ? <img src={`https://image.tmdb.org/t/p/original/${element.logo_path}`} alt={element.name} />
+                        : <p>{element.name}</p>}
+                    </div>
+                  ))
+                }
+              </div>
             </div>
           </div>
         ) : (<p>Loading</p>)
