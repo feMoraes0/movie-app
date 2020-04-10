@@ -66,22 +66,22 @@ function Search() {
         />
         <div className='body-movies'>
           {
-          movies.map((movie) => {
-            if (movie.poster_path !== null) {
-              return (
-                <LazyLoad key={movie.id} offset={150} once>
-                  <Link to={`/details/${movie.id}`}>
-                    <div className='movie-card'>
-                      <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='' />
-                      <h5>{movie.title}</h5>
-                    </div>
-                  </Link>
-                </LazyLoad>
-              );
-            }
-            return '';
-          })
-        }
+            movies.map((movie) => {
+              if (movie.poster_path !== null) {
+                return (
+                  <LazyLoad key={movie.id} offset={150} once>
+                    <Link to={`/details/${movie.id}`}>
+                      <div className='movie-card'>
+                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='' />
+                        <h5>{movie.title}</h5>
+                      </div>
+                    </Link>
+                  </LazyLoad>
+                );
+              }
+              return '';
+            })
+          }
         </div>
       </div>
     </Scaffold>

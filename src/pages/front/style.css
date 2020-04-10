@@ -1,13 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 /* BODY SECTION */
 div.body {
   padding: 50px 0px;
   width: 90vw;
   margin: 40px 5vw;
-}
-div.body a {
-  text-decoration: none;
 }
 
 div.body div.body-movies {
@@ -43,4 +38,3 @@ div.body div.body-movies div.movie-card h5 {
   font-size: 16px;
   text-align: center;
 }
-

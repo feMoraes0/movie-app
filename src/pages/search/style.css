@@ -1,0 +1,40 @@
+/* BODY SECTION */
+div.body {
+  padding: 50px 0px;
+  width: 90vw;
+  margin: 40px 5vw;
+}
+
+div.body div.body-movies {
+  width: 100%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+@keyframes show-card {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+div.body div.body-movies div.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: show-card 1s;
+}
+
+div.body div.body-movies div.movie-card img {
+  width: 100%;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .5);
+}
+div.body div.body-movies div.movie-card h5 {
+  color: #FFF;
+  font-size: 16px;
+  text-align: center;
+}

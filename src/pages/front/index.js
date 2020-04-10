@@ -35,7 +35,6 @@ function Front() {
     <Scaffold>
       {/* MENU */}
       <Menu />
-      <div />
       {/* BODY */}
       <div className='body'>
         <Breadcrumb
