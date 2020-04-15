@@ -23,8 +23,8 @@ function Front() {
   }
 
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=27e2920c99b7658f5d89f82bc529233f&language=en-US&page=${page + 1}`).then((result) => {
-      setMovies([...movies, ...result.data.results]);
+    axios.get(`http://localhost:3333/movies?page=${page + 1}`).then((result) => {
+      setMovies([...movies, ...result.data.movies]);
       setPage(page + 1);
     });
     window.addEventListener('scroll', handleScroll);

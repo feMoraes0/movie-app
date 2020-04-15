@@ -13,7 +13,7 @@ function Detail() {
   const { movie_id } = useParams();
 
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=27e2920c99b7658f5d89f82bc529233f&language=en-US`).then((response) => {
+    axios.get(`http://localhost:3333/movie/${movie_id}`).then((response) => {
       setMovie(response.data);
     });
   }, [movie_id]);
